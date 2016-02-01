@@ -1,6 +1,7 @@
-package ar.edu.clientesTarjetaCredito
+package ar.edu.tarjetaCreditoConIfs
 
-import ar.edu.clientesTarjetaCredito.exceptions.BusinessException
+import ar.edu.tarjetaCreditoConIfs.ClientePosta
+import ar.edu.tarjetaCreditoConIfs.exceptions.BusinessException
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
@@ -67,4 +68,5 @@ class TestCliente {
 	def void testComprarSobrepasandoMaximoSafeShopParaMixto() {
 		mixto.comprar(110)
 	}
+	
 }

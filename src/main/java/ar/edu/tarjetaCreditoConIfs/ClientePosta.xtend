@@ -1,6 +1,6 @@
-package ar.edu.clientesTarjetaCredito
+package ar.edu.tarjetaCreditoConIfs
 
-import ar.edu.clientesTarjetaCredito.exceptions.BusinessException
+import ar.edu.tarjetaCreditoConIfs.exceptions.BusinessException
 
 class ClientePosta implements Cliente {
 	static int MONTO_MINIMO = 50
