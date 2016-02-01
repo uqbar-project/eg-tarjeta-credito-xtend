@@ -1,4 +1,4 @@
-package ar.edu.clientesTarjetaCredito.exceptions
+package ar.edu.tarjetaCreditoDecorator.exceptions
 
 class BusinessException extends RuntimeException {
 	

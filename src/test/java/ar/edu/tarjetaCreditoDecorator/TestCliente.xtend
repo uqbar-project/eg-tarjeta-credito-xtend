@@ -1,9 +1,9 @@
-package ar.edu.clientesTarjetaCredito
+package ar.edu.tarjetaCreditoDecorator
 
-import org.junit.Before
+import ar.edu.tarjetaCreditoDecorator.exceptions.BusinessException
 import org.junit.Assert
+import org.junit.Before
 import org.junit.Test
-import ar.edu.clientesTarjetaCredito.exceptions.BusinessException
 
 class TestCliente {
 	ClientePosta franco

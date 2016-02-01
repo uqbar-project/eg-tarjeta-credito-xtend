@@ -1,6 +1,10 @@
-package ar.edu.clientesTarjetaCredito
+package ar.edu.tarjetaCreditoDecorator
 
-import ar.edu.clientesTarjetaCredito.exceptions.BusinessException
+import ar.edu.tarjetaCreditoDecorator.Cliente
+import ar.edu.tarjetaCreditoDecorator.ClientePosta
+import ar.edu.tarjetaCreditoDecorator.ClientePromocionDecorator
+import ar.edu.tarjetaCreditoDecorator.ClienteSafeShopDecorator
+import ar.edu.tarjetaCreditoDecorator.exceptions.BusinessException
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test

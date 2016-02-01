@@ -1,6 +1,6 @@
-package ar.edu.clientesTarjetaCredito
+package ar.edu.tarjetaCreditoDecorator
 
-import ar.edu.clientesTarjetaCredito.exceptions.BusinessException
+import ar.edu.tarjetaCreditoDecorator.exceptions.BusinessException
 import org.eclipse.xtend.lib.annotations.Accessors
 
 @Accessors
