@@ -1,4 +1,4 @@
-package ar.edu.clientesTarjetaCredito
+package ar.edu.tarjetaCredito
 
 import java.util.ArrayList
 import java.util.List
