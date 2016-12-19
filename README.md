@@ -1,7 +1,7 @@
 
 # Ejercicio de Diseño - Clientes de una Tarjeta de Crédito
 
-<img src="images/creditCard.png" height="240" width="198"/>
+<img src="images/creditCard.png" height="198" width="240"/>
 
 ## Dominio
 Tenemos que modelar que ante cada compra de un cliente de una tarjeta de crédito
