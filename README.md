@@ -16,8 +16,8 @@ La explicación del ejercicio se puede leer en [este apunte](https://docs.google
 
 ## Branches
 
-* if: agrega las condiciones comerciales con ifs
-* strategy: las condiciones comerciales se implementan como strategies
-* decorator: las condiciones comerciales se implementan como decoradores del comportamiento del cliente
- * decorator-cucumber: el test se hace mediante una definición de [BDD (Behavior Driven Development)](https://en.wikipedia.org/wiki/Behavior-driven_development) implementada en [Cucumber](https://cucumber.io/)
+* [if](https://github.com/uqbar-project/eg-tarjeta-credito-xtend/tree/if): agrega las condiciones comerciales con ifs
+* [strategy](https://github.com/uqbar-project/eg-tarjeta-credito-xtend/tree/strategy): las condiciones comerciales se implementan como strategies
+* [decorator](https://github.com/uqbar-project/eg-tarjeta-credito-xtend/tree/decorator): las condiciones comerciales se implementan como decoradores del comportamiento del cliente
+ * [decorator-cucumber](https://github.com/uqbar-project/eg-tarjeta-credito-xtend/tree/decorator-cucumber): el test se hace mediante una definición de [BDD (Behavior Driven Development)](https://en.wikipedia.org/wiki/Behavior-driven_development) implementada en [Cucumber](https://cucumber.io/)
 
