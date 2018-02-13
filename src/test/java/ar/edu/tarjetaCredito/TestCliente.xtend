@@ -69,10 +69,4 @@ class TestCliente {
 		mixto.comprar(110)
 	}
 
-	@Test
-	def void testPagarVencimiento() {
-		mixto.pagarVencimiento(50)
-		Assert.assertEquals(0, mixto.saldo)
-	}
-
 }
