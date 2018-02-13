@@ -17,9 +17,10 @@ class TestCliente {
 		cliente = new ClientePosta(50)
 		gastatutti = new ClientePosta(150, 30)
 		promosao = new ClientePosta(40, true)
-		mixto = new ClientePosta(50)
-		mixto.agregarSafeShop(100)
-		mixto.agregarPromocion
+		mixto = new ClientePosta(50) => [
+			agregarSafeShop(100)
+			agregarPromocion
+		]
 	}
 	
 	@Test
@@ -67,4 +68,11 @@ class TestCliente {
 	def void testComprarSobrepasandoMaximoSafeShopParaMixto() {
 		mixto.comprar(110)
 	}
+
+	@Test
+	def void testPagarVencimiento() {
+		mixto.pagarVencimiento(50)
+		Assert.assertEquals(0, mixto.saldo)
+	}
+
 }

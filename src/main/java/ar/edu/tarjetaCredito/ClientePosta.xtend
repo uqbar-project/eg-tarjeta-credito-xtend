@@ -1,37 +1,28 @@
 package ar.edu.tarjetaCredito
 
-import java.util.ArrayList
 import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
 
 @Accessors
 class ClientePosta implements Cliente {
-	int saldo
+	int saldo = 0
 	int puntosAcumulados
-	List<CondicionComercial> condicionesComerciales
+	List<CondicionComercial> condicionesComerciales = newArrayList
 
 	new(int unSaldo) {
-		initialize
 		saldo = unSaldo	
 	}
 	
 	new(int unSaldo, int unMontoMaximoSafeShop) {
-		initialize
 		saldo = unSaldo
 		agregarSafeShop(unMontoMaximoSafeShop)
 	}
 
 	new(int unSaldo, boolean adhierePromocion) {
-		initialize
 		saldo = unSaldo
 		if (adhierePromocion) {
 			agregarPromocion
 		}
-	}
-
-	def void initialize() {
-		condicionesComerciales = new ArrayList<CondicionComercial>
-		saldo = 0
 	}
 
 	def agregarCondicionComercial(CondicionComercial condicionComercial) {
