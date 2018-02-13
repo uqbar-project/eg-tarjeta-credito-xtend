@@ -7,17 +7,18 @@ import org.junit.Test
 
 class TestCliente {
 	ClientePosta franco
-	Cliente francoConNovia
+	Cliente francoSeguro
 	ClientePromocionDecorator francoEnPromo
-	Cliente francoConNoviaEnPromo
+	ClientePromocionDecorator francoSeguroYPromo
 
 	@Before
 	def void init() {
-		franco = new ClientePosta
-		franco.saldo = 150
-		francoConNovia = new ClienteSafeShopDecorator(franco, 55)
+		franco = new ClientePosta => [
+			saldo = 150
+		]
+		francoSeguro = new ClienteSafeShopDecorator(franco, 55)
 		francoEnPromo = new ClientePromocionDecorator(franco)
-		francoConNoviaEnPromo = new ClientePromocionDecorator(francoConNovia)
+		francoSeguroYPromo = new ClientePromocionDecorator(francoSeguro)
 	}
 
 	@Test
@@ -28,7 +29,7 @@ class TestCliente {
 
 	@Test(expected=typeof(BusinessException))
 	def void francoNoPuedeComprarConSafeShop() {
-		francoConNovia.comprar(60)
+		francoSeguro.comprar(60)
 	}
 
 	@Test
@@ -37,15 +38,20 @@ class TestCliente {
 		Assert.assertEquals(15, francoEnPromo.puntosAcumulados)
 	}
 
-	@Test(expected=typeof(BusinessException))
+	@Test
 	def void francoConSafeShopNoAcumulaPremios() {
-		francoConNoviaEnPromo.comprar(70)
+		try {
+			francoSeguroYPromo.comprar(70)
+			Assert.fail("Franco con safe shop debería haber fallado al comprar por $ 70")
+		} catch (BusinessException e) {
+			Assert.assertEquals(0, francoSeguroYPromo.puntosAcumulados)
+		}
 	}
 
-//	@Test
-//	def void francoConSafeShopCompraElMinimoYAcumulaPremios() {
-//		francoConNoviaEnPromo.comprar(52)
-//		Assert.assertEquals(15, francoConNoviaEnPromo.puntosAcumulados)
-//	}
+	@Test
+	def void francoConSafeShopCompraElMinimoYAcumulaPremios() {
+		francoSeguroYPromo.comprar(52)
+		Assert.assertEquals(15, francoSeguroYPromo.puntosAcumulados)
+	}
 
 }

@@ -31,6 +31,12 @@ class TestClienteOtraPropuesta {
 	}
 
 	@Test
+	def void testPagarClienteDecorado() {
+		mixto.pagarVencimiento(50)
+		Assert.assertFalse("El cliente es moroso", mixto.esMoroso)
+	}
+
+	@Test
 	def void testComprar() {
 		cliente.comprar(50)
 		Assert.assertEquals(cliente.saldo, 100)
