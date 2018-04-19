@@ -7,20 +7,27 @@ import org.junit.Test
 
 class TestCliente {
 	
-	ClientePosta cliente
-	ClientePosta gastatutti
-	ClientePosta promosao
-	ClientePosta mixto
+	Cliente cliente
+	Cliente gastatutti
+	Cliente promosao
+	Cliente mixto
 
 	@Before
 	def void init() {
-		cliente = new ClientePosta(50)
-		gastatutti = new ClientePosta(50) => [
-			agregarSafeShop(30)
-		]
-		promosao = new ClientePosta(50) => [
-			agregarPromocion
-		]
+		cliente = new ClienteBuilder()
+			.saldo(50)
+			.build
+		 
+		gastatutti = new ClienteBuilder()
+			.saldo(50)
+			.safeShop(30)
+			.build
+
+		promosao = new ClienteBuilder()
+			.saldo(50)
+			.promocion
+			.build
+			
 		mixto = new ClientePosta(50) => [
 			agregarSafeShop(80)
 			agregarPromocion
