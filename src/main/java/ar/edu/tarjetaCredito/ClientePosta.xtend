@@ -41,7 +41,9 @@ class ClientePosta implements Cliente {
 	 * METODOS DE NEGOCIO
 	 */
 	override comprar(int monto) {
-		condicionesComerciales.forEach [ condicion | condicion.comprar(monto, this) ]
+		condicionesComerciales.forEach [ 
+			condicion | condicion.comprar(monto, this)
+		]
 		saldo = saldo + monto
 	}
 

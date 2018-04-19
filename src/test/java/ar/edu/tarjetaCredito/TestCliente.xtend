@@ -13,12 +13,16 @@ class TestCliente {
 	ClientePosta mixto
 
 	@Before
-	def void setUp() throws Exception {
+	def void init() {
 		cliente = new ClientePosta(50)
-		gastatutti = new ClientePosta(150, 30)
-		promosao = new ClientePosta(40, true)
+		gastatutti = new ClientePosta(50) => [
+			agregarSafeShop(30)
+		]
+		promosao = new ClientePosta(50) => [
+			agregarPromocion
+		]
 		mixto = new ClientePosta(50) => [
-			agregarSafeShop(100)
+			agregarSafeShop(80)
 			agregarPromocion
 		]
 	}
@@ -38,6 +42,16 @@ class TestCliente {
 	@Test(expected = typeof(BusinessException))
 	def void testComprarSafeShopNoDebo() {
 		gastatutti.comprar(31)
+	}
+
+	@Test
+	def void testComprarSafeShopFallidoNoAumentaSaldo() {
+		try {
+			gastatutti.comprar(31)
+			Assert.fail("El cliente gastatutti no debería comprar por 31")			
+		} catch (BusinessException e) {
+			Assert.assertEquals(50, gastatutti.saldo)
+		}
 	}
 
 	@Test
