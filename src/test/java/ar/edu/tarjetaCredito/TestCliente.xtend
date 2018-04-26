@@ -28,10 +28,11 @@ class TestCliente {
 			.promocion
 			.build
 			
-		mixto = new ClientePosta(50) => [
-			agregarSafeShop(80)
-			agregarPromocion
-		]
+		mixto = new ClienteBuilder()
+			.saldo(50)
+			.safeShop(80)
+			.promocion
+			.build
 	}
 	
 	@Test

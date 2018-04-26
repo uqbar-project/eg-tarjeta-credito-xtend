@@ -7,4 +7,6 @@ interface Cliente {
 	def boolean esMoroso()
 	def int getSaldo()
 	def int getPuntos()
+	def void agregarPuntos(int puntos)	
+	
 }

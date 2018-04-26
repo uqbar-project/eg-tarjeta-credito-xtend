@@ -24,15 +24,28 @@ class ClienteBuilder {
 		this
 	}
 	
-	def build() {
-		new ClientePosta(saldo) => [
-			if (montoMaximoSafeShop > 0) {
-				it.agregarSafeShop(montoMaximoSafeShop)
-			}
-			if (promocion) {
-				it.agregarPromocion
-			}
-		]
+	def Cliente build() {
+		var Cliente cliente = new ClientePosta(saldo)
+		if (!deboDecorarCliente) {
+			return cliente
+		}
+		
+		var clienteDecorado = new ClienteCondicionComercial(cliente)
+		if (tieneSafeShop) {
+			clienteDecorado.agregarCondicionComercial(new SafeShop(montoMaximoSafeShop))
+		}
+		if (promocion) {
+			clienteDecorado.agregarCondicionComercial(new Promocion)
+		}
+		clienteDecorado
+	}
+	
+	def deboDecorarCliente() {
+		tieneSafeShop || promocion
+	}
+	
+	def boolean tieneSafeShop() {
+		montoMaximoSafeShop > 0
 	}
 	
 }

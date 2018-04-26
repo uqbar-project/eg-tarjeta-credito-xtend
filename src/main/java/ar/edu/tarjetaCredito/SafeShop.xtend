@@ -10,7 +10,8 @@ class SafeShop implements CondicionComercial {
 		montoMaximo = unMontoMaximo
 	}
 
-	override comprar(int monto, ClientePosta cliente) {
+	override comprar(int monto, Cliente cliente) {
+		println("comprar Safe Shop - verifico monto")
 		if (monto > montoMaximo) {
 			throw new BusinessException("El monto " + monto + " supera " + montoMaximo + " que es el monto máximo")
 		}
