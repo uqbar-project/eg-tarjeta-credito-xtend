@@ -13,18 +13,6 @@ class ClientePosta implements Cliente {
 		saldo = unSaldo	
 	}
 	
-	new(int unSaldo, int unMontoMaximoSafeShop) {
-		saldo = unSaldo
-		agregarSafeShop(unMontoMaximoSafeShop)
-	}
-
-	new(int unSaldo, boolean adhierePromocion) {
-		saldo = unSaldo
-		if (adhierePromocion) {
-			agregarPromocion
-		}
-	}
-
 	def agregarCondicionComercial(CondicionComercial condicionComercial) {
 		condicionesComerciales.add(condicionComercial)
 	}
