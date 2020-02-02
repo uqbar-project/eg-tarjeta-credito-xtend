@@ -6,11 +6,8 @@ class ClienteBuilder {
 	int montoMaximoSafeShop
 	boolean promocion = false
 	
-	new() {
-	}
-	
-	def saldo(int _saldo) {
-		this.saldo = _saldo
+	def saldo(int saldo) {
+		this.saldo = saldo
 		this
 	}
 	
@@ -27,10 +24,10 @@ class ClienteBuilder {
 	def build() {
 		new ClientePosta(saldo) => [
 			if (montoMaximoSafeShop > 0) {
-				it.agregarSafeShop(montoMaximoSafeShop)
+				agregarSafeShop(montoMaximoSafeShop)
 			}
 			if (promocion) {
-				it.agregarPromocion
+				agregarPromocion
 			}
 		]
 	}
