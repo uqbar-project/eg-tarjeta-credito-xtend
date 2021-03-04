@@ -1,7 +1,7 @@
 
 # Ejercicio de Diseño - Clientes de una Tarjeta de Crédito
 
-[![Build Status](https://travis-ci.org/uqbar-project/eg-tarjeta-credito-xtend.svg?branch=master)](https://travis-ci.org/uqbar-project/eg-tarjeta-credito-xtend) [![Coverage Status](https://coveralls.io/repos/github/uqbar-project/eg-tarjeta-credito-xtend/badge.svg?branch=master&service=github)](https://coveralls.io/github/uqbar-project/eg-tarjeta-credito-xtend?branch=master&service=github)
+[![Build Status](https://travis-ci.com/uqbar-project/eg-tarjeta-credito-xtend.svg?branch=master)](https://travis-ci.com/uqbar-project/eg-tarjeta-credito-xtend) [![Coverage Status](https://coveralls.io/repos/github/uqbar-project/eg-tarjeta-credito-xtend/badge.svg?branch=master&service=github)](https://coveralls.io/github/uqbar-project/eg-tarjeta-credito-xtend?branch=master&service=github)
 
 <img src="images/creditCard.png" height="198" width="240"/>
 
